@@ -23,4 +23,19 @@ RSpec.describe 'Garden show page' do
     expect(page).to_not have_content(@plant_3.name)
     expect(page).to_not have_content(@plant_4.name)
   end
+
+  it 'lists plants in descending order of appearance in plots for this garden' do
+    plot_3 = @garden.plots.create(number: 347, size: 'Small', direction: 'West')
+    plant_plot_5 = PlantPlot.create(plant: @plant_1, plot: @plot_2)
+    plant_plot_6 = PlantPlot.create(plant: @plant_1, plot: plot_3)
+    plant_plot_7 = PlantPlot.create(plant: @plant_2, plot: plot_3)
+
+    visit garden_path(@garden)
+        
+  end
+  # When I visit a garden's show page,
+  # Then I see the list of plants is sorted by the number of plants
+  #   that appear in any of that garden's plots from most to least
+  # (Note: you should only make 1 database query
+  #   to retrieve the sorted list of plants)
 end
