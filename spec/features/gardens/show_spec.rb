@@ -23,9 +23,4 @@ RSpec.describe 'Garden show page' do
     expect(page).to_not have_content(@plant_3.name)
     expect(page).to_not have_content(@plant_4.name)
   end
-  # When I visit an garden's show page
-  # Then I see a list of plants that are included in that garden's plots
-  # And I see that this list is unique (no duplicate plants)
-  # And I see that this list only includes plants
-  # that take less than 100 days to harvest
 end
