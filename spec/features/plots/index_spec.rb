@@ -10,7 +10,7 @@ RSpec.describe 'Plots index page' do
 
   it 'displays a list of all plot numbers with their plants' do
     visit plots_path
-    expect(page).to have_content(@plot_1.id)
+    expect(page).to have_content(@plot_1.number)
     expect(page).to have_content(@plant_1.name)
   end
 
