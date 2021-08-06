@@ -1,10 +1,13 @@
 <h1>Plots Index</h1>
 <hr><br>
 
+<section id="plots">
 <% @plots.each do |plot| %>
   <h2>Plot # <%= plot.id %></h2>
   <p>Plants:</p><br>
   <% plot.plants.each do |plant| %>
     <p><%= plant.name %></p>
+    <p><%= link_to "Remove Plant from Plot", "/plots/#{plot.id}/plants/#{plant.id}", method: :delete, local: true %></p>
   <% end %>
 <% end %>
+</section>
