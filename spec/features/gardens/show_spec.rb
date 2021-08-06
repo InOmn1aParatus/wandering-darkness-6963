@@ -31,7 +31,9 @@ RSpec.describe 'Garden show page' do
     plant_plot_7 = PlantPlot.create(plant: @plant_2, plot: plot_3)
 
     visit garden_path(@garden)
-        
+    within("#plants") do
+      expect(@plant_1.name).to appear_before(@plant_2.name)
+    end
   end
   # When I visit a garden's show page,
   # Then I see the list of plants is sorted by the number of plants
