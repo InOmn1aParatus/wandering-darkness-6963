@@ -1,8 +1,6 @@
 class GardensController < ApplicationController
   def show
     @garden = Garden.find(params[:id])
-    @plants = @garden.plants
-                .where("days_to_harvest < 100")
-                .distinct
+    @plants = @garden.plant_display
   end
 end
